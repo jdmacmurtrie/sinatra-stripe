@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'stripe'
+require 'dotenv/load'
 
 configure :development, :test do
   require 'pry'
@@ -11,8 +12,8 @@ Dir[File.join(File.dirname(__FILE__), 'lib', '**', '*.rb')].each do |file|
   also_reload file
 end
 
-set :publishable_key, ENV['PUBLISHABLE_KEY']
-set :secret_key, ENV['SECRET_KEY']
+set :publishable_key, ENV['STRIPE_PUBLISHABLE_KEY']
+set :secret_key, ENV['STRIPE_SECRET_KEY']
 
 Stripe.api_key = settings.secret_key
 
@@ -23,18 +24,19 @@ end
 
 post '/charge' do
   # Amount in cents
+  binding.pry
  @amount = 500
 
  customer = Stripe::Customer.create(
-   :email => 'customer@example.com',
-   :source  => params[:stripeToken]
+   email: 'customer@example.com',
+   source: params[:stripeToken]
  )
 
  charge = Stripe::Charge.create(
-   :amount      => @amount,
-   :description => 'Sinatra Charge',
-   :currency    => 'usd',
-   :customer    => customer.id
+   amount:       @amount,
+   description:  'Sinatra Charge',
+   currency:     'usd',
+   customer:     customer.id
  )
 
  erb :charge

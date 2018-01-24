@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'rake'
 gem 'stripe'
+gem 'dotenv'
 
 group :test, :development do
   gem 'pry'

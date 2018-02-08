@@ -25,7 +25,8 @@ end
 post '/charge' do
   # Amount in cents
   binding.pry
- @amount = 500
+ @amount = params[:amount].gsub(",", "")
+  @pretty_amount = "$#{params[:amount]}"
 
  customer = Stripe::Customer.create(
    email: 'customer@example.com',

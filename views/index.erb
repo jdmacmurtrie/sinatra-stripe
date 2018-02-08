@@ -1,17 +1,28 @@
 <h1><%= @title %></h1>
 <form action="/charge" method="post" class="payment">
-    <article>
-      <label class="amount">
-        <span>Amount: $5.00</span>
-        <input type="number" name="amount" value="" step=".01">
-      </label>
-    </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= settings.publishable_key %>"
-            data-zip-code="true"
-            data-description="A month's subscription"
-            data-amount="dd"
-            data-locale="auto">
-    </script>
-  </form>
+  <article>
+    <label class="amount">
+      <span>Amount: </span>
+      <input id="amount" name="amount" type="text" maxlength="15" />
+    </label>
+  </article>
+  <article>
+    <input type="hidden" name="stripeToken" >
+  </article>
+  <article>
+    <input type="hidden" name="<%= settings.publishable_key %>" id="key">
+  </article>
+
+ <button id='donateButton'>Donate</button>
+  <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= settings.publishable_key %>"
+          data-zip-code="true"
+          data-description="A month's subscription"
+          data-amount=""
+          data-locale="auto">
+  </script> -->
+  <script type="text/javascript">
+    let key = "<%= settings.publishable_key %>"
+  </script>
+</form>

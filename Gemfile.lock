@@ -3,8 +3,8 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    backports (3.11.0)
-    capybara (2.17.0)
+    backports (3.11.1)
+    capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (>= 1.3.3)
@@ -23,17 +23,17 @@ GEM
     mini_portile2 (2.3.0)
     multi_json (1.13.1)
     multipart-post (2.0.0)
-    mustermann (1.0.1)
-    nokogiri (1.8.1)
+    mustermann (1.0.2)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (3.0.1)
-    rack (2.0.3)
-    rack-protection (2.0.0)
+    public_suffix (3.0.2)
+    rack (2.0.4)
+    rack-protection (2.0.1)
       rack
-    rack-test (0.8.2)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rake (12.3.0)
     rspec (3.7.0)
@@ -48,20 +48,20 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
-    sinatra (2.0.0)
+    rspec-support (3.7.1)
+    sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.0)
+      rack-protection (= 2.0.1)
       tilt (~> 2.0)
-    sinatra-contrib (2.0.0)
+    sinatra-contrib (2.0.1)
       backports (>= 2.0)
       multi_json
       mustermann (~> 1.0)
-      rack-protection (= 2.0.0)
-      sinatra (= 2.0.0)
+      rack-protection (= 2.0.1)
+      sinatra (= 2.0.1)
       tilt (>= 1.3, < 3)
-    stripe (3.9.1)
+    stripe (3.11.0)
       faraday (~> 0.10)
     tilt (2.0.8)
     xpath (3.0.0)
@@ -82,4 +82,4 @@ DEPENDENCIES
   stripe
 
 BUNDLED WITH
-   1.14.6
+   1.16.1

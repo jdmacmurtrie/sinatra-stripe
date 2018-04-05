@@ -8,11 +8,10 @@
     </label>
   </article>
   <article>
-    <input type="hidden" name="stripeToken" >
+    <input type="hidden" name="stripeToken" id=stripeToken >
   </article>
-  <article>
-    <input type="hidden" name="<%= settings.publishable_key %>" id="key">
-  </article>
+
+  <div id="error_explanation"></div>
 
  <button id='donateButton'>Donate</button>
   <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -23,6 +22,6 @@
           data-locale="auto">
   </script> -->
   <script type="text/javascript">
-    let key = "<%= settings.publishable_key %>"
+    let publishableKey = "<%= settings.publishable_key %>"
   </script>
 </form>

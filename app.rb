@@ -25,7 +25,7 @@ end
 post '/charge' do
   # Amount in cents
   binding.pry
- @amount = params[:amount].gsub(",", "")
+  @amount = params[:amount].gsub(",", "").to_i * 100
   @pretty_amount = "$#{params[:amount]}"
 
  customer = Stripe::Customer.create(
@@ -39,7 +39,6 @@ post '/charge' do
    currency:     'usd',
    customer:     customer.id
  )
-
  erb :charge
 end
 
